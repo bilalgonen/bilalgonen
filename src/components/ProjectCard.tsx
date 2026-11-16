@@ -34,18 +34,24 @@ export function ProjectCard({ project }: { project: Project }) {
         ))}
       </ul>
 
-      <div className='mt-auto flex flex-wrap gap-3 pt-6'>
-        <ButtonLink href={project.demoUrl} ariaLabel={`${project.name} live demo (opens in a new tab)`}>
-          Live demo ↗
-        </ButtonLink>
-        <ButtonLink
-          href={project.sourceUrl}
-          variant='secondary'
-          ariaLabel={`${project.name} source code on GitHub (opens in a new tab)`}
-        >
-          Source
-        </ButtonLink>
-      </div>
+      {(project.demoUrl || project.sourceUrl) && (
+        <div className='mt-auto flex flex-wrap gap-3 pt-6'>
+          {project.demoUrl && (
+            <ButtonLink href={project.demoUrl} ariaLabel={`${project.name} live demo (opens in a new tab)`}>
+              Live demo ↗
+            </ButtonLink>
+          )}
+          {project.sourceUrl && (
+            <ButtonLink
+              href={project.sourceUrl}
+              variant='secondary'
+              ariaLabel={`${project.name} source code on GitHub (opens in a new tab)`}
+            >
+              Source
+            </ButtonLink>
+          )}
+        </div>
+      )}
     </article>
   )
 }

@@ -5,8 +5,8 @@ export interface Project {
   summary: string[]
   highlights: string[]
   tech: string[]
-  demoUrl: string
-  sourceUrl: string
+  demoUrl?: string
+  sourceUrl?: string
 }
 
 export interface ExperienceItem {

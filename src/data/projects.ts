@@ -56,4 +56,29 @@ export const projects: Project[] = [
     demoUrl: 'https://devtoolkit.bilalgonen.workers.dev',
     sourceUrl: 'https://github.com/bilalgonen/dev-toolkit-react-typescript',
   },
+  {
+    id: 'rag-chatbot',
+    name: 'RAG Chatbot',
+    tagline: 'Ask questions of your own documents and see the sources.',
+    summary: [
+      'A retrieval-augmented generation chatbot in Python that answers questions from custom documents and returns the source passages with each answer.',
+      'Document chunks are embedded with Sentence-Transformers and indexed in FAISS using cosine similarity, retrieving the top-k passages per query. Claude is prompted to answer only from the retrieved context and to say when the answer is not there, which reduces hallucination.',
+    ],
+    highlights: [
+      'Semantic search: all-MiniLM-L6-v2 embeddings in a FAISS index',
+      'FastAPI REST API with auto-generated Swagger docs',
+      'Grounded answers that cite source passages',
+      'API key kept in environment variables, out of code and git',
+    ],
+    tech: [
+      'Python',
+      'FastAPI',
+      'FAISS',
+      'Claude API',
+      'Sentence-Transformers (all-MiniLM-L6-v2)',
+      'Pydantic',
+      'Uvicorn',
+    ],
+    sourceUrl: 'https://github.com/bilalgonen/rag-chatbot-fastapi-faiss',
+  },
 ]

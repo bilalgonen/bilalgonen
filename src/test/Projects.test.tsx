@@ -9,17 +9,23 @@ describe('ProjectCard', () => {
   it.each(projects)('renders $name with demo and source links and tech tags', (project) => {
     render(<ProjectCard project={project} />)
     const card = screen.getByRole('article', { name: project.name })
-    const demo = within(card).getByRole('link', { name: new RegExp(`${project.name} live demo`, 'i') })
-    expect(demo).toHaveAttribute('href', project.demoUrl)
-    expect(demo).toHaveAttribute('rel', expect.stringContaining('noopener'))
-    expect(within(card).getByRole('link', { name: /source/i })).toHaveAttribute('href', project.sourceUrl)
+    const demo = within(card).queryByRole('link', { name: new RegExp(`${project.name} live demo`, 'i') })
+    if (project.demoUrl) {
+      expect(demo).toHaveAttribute('href', project.demoUrl)
+      expect(demo).toHaveAttribute('rel', expect.stringContaining('noopener'))
+    } else {
+      expect(demo).toBeNull()
+    }
+    const source = within(card).queryByRole('link', { name: /source/i })
+    if (project.sourceUrl) expect(source).toHaveAttribute('href', project.sourceUrl)
+    else expect(source).toBeNull()
     expect(within(card).getAllByRole('listitem').length).toBeGreaterThanOrEqual(project.tech.length)
   })
 })
 
 describe('projects data', () => {
-  it('contains Recipe Box and DevToolkit', () => {
-    expect(projects.map((p) => p.name)).toEqual(['Recipe Box', 'DevToolkit'])
+  it('contains Recipe Box, DevToolkit and RAG Chatbot', () => {
+    expect(projects.map((p) => p.name)).toEqual(['Recipe Box', 'DevToolkit', 'RAG Chatbot'])
   })
 })
 
