@@ -20,9 +20,6 @@ export function Hero() {
             {profile.tagline}
           </p>
           <div className='mt-8 flex flex-wrap gap-3'>
-            <ButtonLink href='#projects' external={false}>
-              View projects
-            </ButtonLink>
             <ButtonLink href={profile.links.resume} variant='secondary'>
               Resume (PDF)
             </ButtonLink>

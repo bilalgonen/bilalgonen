@@ -14,8 +14,8 @@ export function Home() {
       <Certificates />
       <Projects />
       <Skills />
-      <Academic />
       <Education />
+      <Academic />
     </main>
   )
 }
