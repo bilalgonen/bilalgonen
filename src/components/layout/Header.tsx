@@ -17,7 +17,7 @@ export function Header() {
     <header className='sticky top-0 z-30 border-b border-slate-200 bg-white/80 backdrop-blur dark:border-slate-800 dark:bg-slate-950/80'>
       <nav
         aria-label='Main'
-        className='mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-4 sm:px-6'
+        className='mx-auto flex h-12 max-w-5xl items-center justify-between gap-4 px-4 sm:px-6'
       >
         <Link
           to='/'

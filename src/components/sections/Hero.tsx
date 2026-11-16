@@ -11,7 +11,7 @@ export function Hero() {
         aria-hidden='true'
         className='pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_70%_0%,var(--color-brand-100),transparent)] opacity-70 dark:bg-[radial-gradient(60%_50%_at_70%_0%,var(--color-brand-900),transparent)] dark:opacity-100'
       />
-      <div className='relative mx-auto grid max-w-5xl items-center gap-10 px-4 py-16 sm:px-6 md:grid-cols-[1fr_auto] md:py-8'>
+      <div className='relative mx-auto grid max-w-5xl items-center gap-10 px-4 py-8 sm:px-6 md:grid-cols-[1fr_auto] md:py-8'>
         <div className='animate-fade-up'>
           <p className='mb-3 text-sm font-semibold uppercase tracking-widest text-brand-600 dark:text-brand-300'>
             {profile.title}
