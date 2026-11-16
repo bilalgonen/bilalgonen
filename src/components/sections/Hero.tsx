@@ -45,21 +45,6 @@ export function Hero() {
           className='mx-auto h-48 w-48 rounded-2xl object-cover shadow-xl ring-4 ring-white md:h-64 md:w-64 dark:ring-slate-800'
         />
       </div>
-      <dl className='relative mx-auto grid max-w-5xl grid-cols-2 gap-4 px-4 pb-10 sm:px-6 md:grid-cols-4'>
-        {profile.stats.map((s) => (
-          <div
-            key={s.label}
-            className='rounded-xl border border-slate-200 bg-white/70 p-4 dark:border-slate-800 dark:bg-slate-900/60'
-          >
-            <dt className='order-2 text-sm text-slate-500 dark:text-slate-400'>
-              {s.label}
-            </dt>
-            <dd className='text-2xl font-bold text-slate-900 dark:text-white'>
-              {s.value}
-            </dd>
-          </div>
-        ))}
-      </dl>
     </section>
   )
 }
